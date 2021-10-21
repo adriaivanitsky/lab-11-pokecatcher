@@ -5,3 +5,13 @@ export function findById(id, items){
         }
     }
 }
+
+export function getResults(){
+    const resultString = localStorage.getItem('RESULTS') || '[]';
+    const results = JSON.parse(resultString);
+    return results;
+}
+
+// export function showPokemon(){
+//     const 
+// }
