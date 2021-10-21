@@ -12,6 +12,15 @@ export function getResults(){
     return results;
 }
 
-// export function showPokemon(){
-//     const 
-// }
+export function showPokemon(id){
+    let results = getResults();
+    let item = findById(id, results);
+    if (item){
+        item.shown++;
+    } else {
+        const newItem = { id: id, shown:1, picked: 0 };
+        results.push(newItem);
+    }
+    const resultString = JSON.stringify(results);
+    localStorage.setItem('RESULTS', resultString);
+}
