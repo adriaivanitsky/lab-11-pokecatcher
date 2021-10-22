@@ -12,7 +12,7 @@ for (let item of results){
     const container = document.createElement('div');
     container.classList.add('results-container');
     const img = document.createElement('img');
-    img.src = 'url_image';
+    img.src = pokemon.url_image;
     const header = document.createElement('h3');
     header.textContent = pokemon.name;
     const div = document.createElement('div');
