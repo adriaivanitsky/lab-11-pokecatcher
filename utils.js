@@ -28,10 +28,13 @@ export function showPokemon(id){
 export function pickPokemon(id){
     let results = getResults();
     let item = findById(id, results);
-    if (item){
-        item.picked++;
-    } else {
-        const resultString = JSON.stringify(results);
-        localStorage.setItem('RESULTS', resultString);
-    }
+    item.picked++;
+    const resultString = JSON.stringify(results);
+    localStorage.setItem('RESULTS', resultString);
+}
+
+export function setResults(results){
+    const resultString = JSON.stringify(results);
+    localStorage.setItem('RESULTS', resultString);
+
 }

@@ -1,7 +1,7 @@
 
 //use array .map to display results
 import pokemonList from '../pokemon-list.js';
-import { getResults, findById } from '../utils.js';
+import { pickPokemon, getResults, findById } from '../utils.js';
 
 const results = getResults();
 
@@ -28,6 +28,8 @@ for (let item of results){
     container.append(header, div);
     main.append(container);
 }
+
+pickPokemon(1);
 
 // const names = results.map((item)=>{
 //     const pokemon = findById(item.id, pokemonList);

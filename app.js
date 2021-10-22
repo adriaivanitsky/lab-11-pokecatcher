@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import pokemon from './pokemon-list.js';
-import { showPokemon } from './utils.js';
+import { showPokemon, pickPokemon } from './utils.js';
 // initialize global state
 let pokemon1 = document.getElementById('input1');
 const pokemonImg1 = document.getElementById('img1');
@@ -23,29 +23,31 @@ const generatePokemon = () => {
         randomNum3 = Math.floor(Math.random() * pokemon.length);
     }
     // console.log(pokemon[randomNum1], randomNum2, randomNum3)
-    pokemon1 = pokemon[randomNum1];
-    showPokemon(pokemon1.id);
-    pokemonImg1.src = pokemon1['url_image'];
-    pokemon2 = pokemon[randomNum2];
-    showPokemon(pokemon2.id);
-    pokemonImg2.src = pokemon2['url_image'];
-    pokemon3 = pokemon[randomNum3];
-    showPokemon(pokemon3.id);
-    pokemonImg3.src = pokemon3['url_image'];
+    let poke1 = pokemon[randomNum1];
+    showPokemon(poke1.id);
+    pokemonImg1.src = poke1.url_image;
+    let poke2 = pokemon[randomNum2];
+    showPokemon(poke2.id);
+    pokemonImg2.src = poke2.url_image;
+    let poke3 = pokemon[randomNum3];
+    showPokemon(poke3.id);
+    pokemonImg3.src = poke3.url_image;
+    pokemon1.value = poke1.id;
+    pokemon2.value = poke2.id;
+    pokemon3.value = poke3.id;
 };
 
 generatePokemon();
 let totalPlays = 0;
 // set event listeners 
 button.addEventListener('click', () =>{
-    // const chosen = document.querySelector('input[type=radio]:checked');
-    // pickPokemon(chosen.id);
+    const chosen = document.querySelector('input[type=radio]:checked');
+    pickPokemon(Number(chosen.value));
     generatePokemon();
     totalPlays++;
     if (totalPlays >= 10){
         window.location.replace('./resultspage/index.html'); 
     }
-  
 });
 
   // get user input
