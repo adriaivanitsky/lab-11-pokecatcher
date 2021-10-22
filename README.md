@@ -23,3 +23,66 @@
 * Cypress will open -- you should then click "run <#> integration spec(s)"
     ![](cypress.png)
 * Make sure all tests pass
+
+
+### PLAN
+
+## html elements
+create 3 radio buttons with images
+event listener on button
+
+## state
+totalplays
+what's been picked
+what's been shown
+
+## user events
+page load
+-genereate 2 random pokemon
+-update shown
+-render pokemon on the page
+
+## button click
+update picked
+totalplays
+
+## data
+total plays #
+results array
+pokemon array
+
+## functions
+findById
+getResults
+-get data from local storage
+showPokemon(id)
+increments shown
+pickPokemon(id)
+increments picked
+
+encounter pokemon and capture
+
+
+
+sooo
+make a homepage with three images as radio buttons
+button with an id of select pokemon
+
+make an empty results page
+
+local storage functions
+
+app.js logic
+make a functoin called generatePokemon()
+generate 3 random pokemon and call showPokemon for each 
+make sure none are the same
+render pokemon on page
+
+## on page load
+call generatePokemon
+set totalPlays to 0
+
+## on button click
+increment totalplays
+call pickpokemon with chosen pokemon
+if total plays >= 10 redirect to results page, else call generate pokemon
