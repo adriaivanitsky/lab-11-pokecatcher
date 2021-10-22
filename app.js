@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import pokemon from './pokemon-list.js';
-import { getResults, showPokemon, pickPokemon } from './utils.js';
+import { showPokemon } from './utils.js';
 // initialize global state
 let pokemon1 = document.getElementById('input1');
 const pokemonImg1 = document.getElementById('img1');
@@ -38,7 +38,7 @@ generatePokemon();
 let totalPlays = 0;
 // set event listeners 
 button.addEventListener('click', () =>{
-    const chosen = document.querySelector('input[type=radio]:checked');
+    // const chosen = document.querySelector('input[type=radio]:checked');
     // pickPokemon(chosen.id);
     generatePokemon();
     totalPlays++;

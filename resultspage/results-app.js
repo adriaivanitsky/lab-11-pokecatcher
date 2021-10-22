@@ -29,8 +29,8 @@ for (let item of results){
     main.append(container);
 }
 
-const names = results.map((item)=>{
-    const pokemon = findById(item.id, pokemonList);
-    return pokemon.name;
-});
+// const names = results.map((item)=>{
+//     const pokemon = findById(item.id, pokemonList);
+//     return pokemon.name;
+// });
 
