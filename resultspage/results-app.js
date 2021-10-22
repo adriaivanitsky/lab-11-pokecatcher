@@ -6,6 +6,7 @@ import { pickPokemon, getResults, findById } from '../utils.js';
 const results = getResults();
 
 const main = document.getElementById('main');
+const resultsContainer = document.getElementById('results-section');
 
 for (let item of results){
     const pokemon = findById(item.id, pokemonList);
@@ -19,14 +20,15 @@ for (let item of results){
     div.classList.add('results-body');
     const p = document.createElement('p');
     const resultsSpan1 = document.createElement('span');
-    resultsSpan1.textContent = `shown: ${item.shown}`;
+    resultsSpan1.textContent = `seen: ${item.shown} `;
     const resultsSpan2 = document.createElement('span');
-    resultsSpan2.textContent = `picked: ${item.picked}`;
+    resultsSpan2.textContent = `caught: ${item.picked}`;
     p.append(resultsSpan1, resultsSpan2);
     p.classList.add('results-text');
     div.append(img, p);
     container.append(header, div);
     main.append(container);
+    resultsContainer.append(container);
 }
 
 pickPokemon(1);
