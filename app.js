@@ -32,9 +32,14 @@ const generatePokemon = () => {
 };
 
 generatePokemon();
+let totalPlays = 0;
 // set event listeners 
 button.addEventListener('click', () =>{
     generatePokemon();
+    totalPlays++;
+    if (totalPlays >= 10){
+        window.location.replace('./results%20page/index.html'); 
+    }
   
 });
 
