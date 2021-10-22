@@ -24,10 +24,13 @@ const generatePokemon = () => {
     }
     // console.log(pokemon[randomNum1], randomNum2, randomNum3)
     pokemon1 = pokemon[randomNum1];
+    showPokemon(pokemon1.id);
     pokemonImg1.src = pokemon1['url_image'];
     pokemon2 = pokemon[randomNum2];
+    showPokemon(pokemon2.id);
     pokemonImg2.src = pokemon2['url_image'];
     pokemon3 = pokemon[randomNum3];
+    showPokemon(pokemon3.id);
     pokemonImg3.src = pokemon3['url_image'];
 };
 
@@ -35,10 +38,12 @@ generatePokemon();
 let totalPlays = 0;
 // set event listeners 
 button.addEventListener('click', () =>{
+    const chosen = document.querySelector('input[type=radio]:checked');
+    // pickPokemon(chosen.id);
     generatePokemon();
     totalPlays++;
     if (totalPlays >= 10){
-        window.location.replace('./results%20page/index.html'); 
+        window.location.replace('./resultspage/index.html'); 
     }
   
 });
