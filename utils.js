@@ -24,3 +24,11 @@ export function showPokemon(id){
     const resultString = JSON.stringify(results);
     localStorage.setItem('RESULTS', resultString);
 }
+
+export function pickPokemon(id){
+    let results = getResults();
+    let item = findById(id, results);
+    item.picked++;
+    const resultString = JSON.stringify(results);
+    localStorage.setItem('RESULTS', resultString);
+}
