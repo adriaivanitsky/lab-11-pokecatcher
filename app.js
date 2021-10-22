@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import pokemon from './pokemon-list.js';
-import { getResults } from './utils.js';
+import { getResults, showPokemon, pickPokemon } from './utils.js';
 // initialize global state
 let pokemon1 = document.getElementById('input1');
 const pokemonImg1 = document.getElementById('img1');
